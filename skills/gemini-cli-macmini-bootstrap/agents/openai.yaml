@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gemini CLI Mac Bootstrap"
+  short_description: "Install and auth Gemini CLI on new Mac mini hosts"
+  default_prompt: "Set up Gemini CLI end-to-end on a new Mac mini, including install, auth mode selection, and smoke test."
