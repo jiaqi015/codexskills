@@ -14,6 +14,15 @@ gemini --version
 gemini -p "Reply exactly OK" --output-format json
 ```
 
+## Safe Audit Before Real Run
+
+```bash
+bash ~/.codex/skills/gemini-cli-macmini-bootstrap/scripts/bootstrap-gemini-cli.sh \
+  --auth auto \
+  --dry-run \
+  --json-report -
+```
+
 ## Common Failures and Fixes
 
 ### Auto mode fails in non-interactive shell
@@ -53,13 +62,12 @@ Normalize to one key with:
 bash ~/.codex/skills/gemini-cli-macmini-bootstrap/scripts/bootstrap-gemini-cli.sh --auth api-key --api-key "<KEY>" --persist-zshrc
 ```
 
-### OAuth browser does not open
+### Need CI-friendly output
 
-1. Run in interactive terminal.
-2. Execute `gemini` manually.
-3. Open URL shown in terminal if auto-open fails.
+Use:
 
-## Recommended Auth Strategy
-
-- Personal setup: OAuth (`--auth oauth`)
-- CI/non-interactive: API key (`--auth api-key --api-key ...`)
+```bash
+bash ~/.codex/skills/gemini-cli-macmini-bootstrap/scripts/bootstrap-gemini-cli.sh \
+  --auth api-key --api-key "<KEY>" --no-smoke \
+  --json-report /tmp/gemini-bootstrap-report.json
+```
