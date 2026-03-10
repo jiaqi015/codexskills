@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Account Switch"
+  short_description: "Generic Codex auth switch and reauth workflow"
+  default_prompt: "Use $codex-account-switch to inspect, switch, or reauthorize OpenClaw Codex auth profiles safely."
